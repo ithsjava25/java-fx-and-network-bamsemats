@@ -1,0 +1,23 @@
+.root {
+    -fx-font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+.list-cell {
+    -fx-padding: 6px 8px;
+}
+
+.button {
+    -fx-background-radius: 6px;
+    -fx-padding: 6 12 6 12;
+}
+
+.text-field {
+    -fx-background-radius: 6px;
+    -fx-padding: 6px;
+    -fx-border-color: derive(-fx-control-inner-background, -10%);
+}
+
+.progress-bar {
+    -fx-accent: -fx-focus-color;
+}

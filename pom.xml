@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
@@ -15,26 +16,32 @@
         <assertj.core.version>3.27.6</assertj.core.version>
         <mockito.version>5.20.0</mockito.version>
         <javafx.version>25</javafx.version>
+        <httpclient.version>5.3.1</httpclient.version>
     </properties>
+
     <dependencies>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.core.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -45,7 +52,21 @@
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -55,7 +76,7 @@
                 <configuration>
                     <mainClass>com.example.HelloFX</mainClass>
                     <options>
-                    <option>--enable-native-access=javafx.graphics</option>
+                        <option>--enable-native-access=javafx.graphics</option>
                     </options>
                     <launcher>javafx</launcher>
                     <stripDebug>true</stripDebug>
@@ -65,4 +86,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.control.Label?>
 
-<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.HelloController">
-    <children>
-        <Label fx:id="messageLabel" text="Hello, JavaFX!" />
-    </children>
-</StackPane>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.HelloController">
+
+    <top>
+        <HBox spacing="8" style="-fx-background-color: -fx-control-inner-background; -fx-alignment: center;">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <Label text="Username:">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets></Label>
+            <TextField fx:id="usernameField" prefWidth="200" />
+            <Region HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="hideMyMessagesCheck" text="Hide my messages" />
+            <Button fx:id="attachButton" onAction="#onAttachFile" text="Attach file" />
+        </HBox>
+    </top>
+
+
+    <center>
+        <VBox spacing="6">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <ListView fx:id="chatList" prefHeight="380" />
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <ProgressBar fx:id="uploadProgress" prefWidth="200" progress="0" visible="false" />
+                <Label fx:id="statusLabel" text="Ready" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="8">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <TextField fx:id="inputField" onAction="#onSend" HBox.hgrow="ALWAYS" />
+            <Button fx:id="sendButton" onAction="#onSend" text="Send" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
